@@ -1,0 +1,9 @@
+/home/reyzaps/.rvm/rubies/ruby-2.2.3/bin/ruby -r ./siteconf20160226-6727-mpade9.rb extconf.rb --with-cflags=-w
+creating Makefile
+
+make "DESTDIR=" clean
+
+make "DESTDIR="
+make: Nothing to be done for `all'.
+
+make "DESTDIR=" install
