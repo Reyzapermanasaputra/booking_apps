@@ -1,4 +1,14 @@
 <div class="container">
+<h4>
+<% if !current_user %>
+<%= link_to 'Log-in', sign_in_path %>
+<% else %>
+<p class="text-right">
+Hello <%= current_user.username %>
+<%= link_to 'Log-Out', session_path(current_user.id), method: "DELETE" %>
+</p>
+<% end %>
+</h4>
 	<div class="well">
 		<%= link_to "New Product", new_product_path, remote: true, class: "btn btn-primary" %>
 	</div>
@@ -7,15 +17,19 @@
 	<table class="table table-bordered table-stripped">
 		<thead>
 			<tr>
-				<th>name</th>
+				<th>No</th>
+				<th>Name</th>
 				<th>Price</th>
-				<th>&nbsp;</th>
-				<th>&nbsp;</th>
+				<th>Edit</th>
+				<th>Delete</th>
 			</tr>
 		</thead>
 		<tbody class="product-index">
 			<%= render "index" %> 
 		</tbody>
 	</table>
+	<div class="text-right">
+	<h5><%= will_paginate @products %></h5>
+	</div>
 </div>
 <div id="product-modal" class="modal fade"></div>

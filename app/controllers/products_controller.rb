@@ -1,7 +1,15 @@
 class ProductsController < ApplicationController
+  
+  before_action :require_login
+  def require_login
+    unless current_user
+      flash[:error] = "you must login dude"
+      redirect_to sign_in_path
+    end
+  end
 
 	def index
-		@products = Product.all
+		@products = Product.paginate(:page => params[:page], :per_page => 10)
 	end
 
 	def show
@@ -41,4 +49,5 @@ class ProductsController < ApplicationController
 	def product_params
 		params.require(:product).permit(:name, :price)
 	end
+
 end

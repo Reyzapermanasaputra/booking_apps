@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'bcrypt-ruby', :require => 'bcrypt'
+gem 'will_paginate', '~> 3.0.6'
 gem 'realtime', '~> 0.1.0'
 gem 'redis', '~>3.2'
 gem 'bootstrap-sass', '~> 3.3.5.1'

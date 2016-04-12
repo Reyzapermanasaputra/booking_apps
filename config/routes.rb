@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  
+  get 'sign_in' => "sessions#new", as: :sign_in
+  get 'logot' => "sessions#destroy", as: :logot
+  get 'sign_up' => "users#new", as: :sign_up
+
+  resources :users
+  resources :sessions
   resources :products do
     get "delete"
   end
