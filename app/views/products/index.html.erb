@@ -10,7 +10,7 @@ Hello <%= current_user.username %>
 <% end %>
 </h4>
 	<div class="well">
-		<%= link_to "New Product", new_product_path, remote: true, class: "btn btn-primary" %>
+		<%= link_to "New Data", new_product_path, remote: true, class: "btn btn-primary" %>
 	</div>
 	<div class="new-product"></div>
 
@@ -18,8 +18,12 @@ Hello <%= current_user.username %>
 		<thead>
 			<tr>
 				<th>No</th>
-				<th>Name</th>
-				<th>Price</th>
+				<th>Nama Lembaga</th>
+				<th>Alamat Lengkap</th>
+				<th>Desa</th>
+				<th>Kecamatan</th>
+				<th>Kabupaten/Kota</th>
+				<th>No. Akte</th>
 				<th>Edit</th>
 				<th>Delete</th>
 			</tr>
